@@ -6,16 +6,17 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import QZone from "../Q-zone/Q-zone";
 const RightNav = () => {
   return (
     <div className=" ">
       <div>
         <h1 className="font-bold text-xl mb-4">Login With</h1>
         <div className="space-y-3">
-          <button className="flex items-center border-2 border-sky-400 rounded-md p-1 w-56 justify-center">
+          <button className="flex items-center bg-white border-2 border-sky-400 rounded-md p-1 w-56 justify-center transition-colors duration-1000 hover:bg-gradient-to-r from-blue-500 to-purple-500 ">
             <FaGoogle className="mx-2" /> Login with Google
           </button>
-          <button className="flex items-center border-2 border-slate-500 rounded-md p-1  w-56 justify-center">
+          <button className="flex items-center border-2 border-slate-500 rounded-md p-1  w-56 justify-center  ">
             <FaGithub className="mx-2" /> Login with Github
           </button>
         </div>
@@ -52,14 +53,21 @@ const RightNav = () => {
           </Link>
         </div>
       </section>
-      <section className="my-7 bg-slate-200 rounded-md">
-        <h1 className="p-2 ms-3 font-bold text-xl space-y-5">Q - Zone</h1>
-        <div className="space-y-9">
-          <img src="/qZone1.png" alt="" />
-          <img src="/qZone2.png" alt="" />
-          <img src="/qZone3.png" alt="" />
-        </div>
+
+      <section>
+        <QZone />
       </section>
+      <div className="relative ">
+        <img className="rounded-sm" src="/public/bg.png" alt="" />
+        <section className="absolute top-0 text-center mx-auto text-white space-y-10 px-5 py-24">
+          <h1 className="text-2xl font-bold">Create an Amazing Newspaper</h1>
+          <p>
+            Discover thousands of options, easy to customize layouts, one-click
+            to import demo and much more.
+          </p>
+          <button className="bg-red-500 px-4 py-3 mx-auto">Lean More</button>
+        </section>
+      </div>
     </div>
   );
 };
