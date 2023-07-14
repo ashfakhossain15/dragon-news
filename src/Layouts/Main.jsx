@@ -8,12 +8,15 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <div  className="flex justify-center">
+      <div className="flex justify-center">
         <main className="lg:grid flex flex-col grid-cols-3 lg:gap-x-44 ">
           <div>
             <LeftNav />
           </div>
-          <div>Main Content</div>
+
+          <div>
+            <Outlet />
+          </div>
           <div className="w-full">
             <RightNav />
           </div>
