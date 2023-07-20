@@ -14,12 +14,15 @@ const LeftNav = () => {
   }, []);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 max-w-xl sticky top-8">
       <h2>All categories</h2>
 
       <div className="divide-y">
         {categories.map((category) => (
-          <p key={category.id} className="px-6 py-3 text-lg font-semibold hover:bg-slate-300 rounded-md transition duration-500 ">
+          <p
+            key={category.id}
+            className="px-6 py-3 text-lg font-semibold hover:bg-slate-300 rounded-md transition duration-500 "
+          >
             <Link to={`/category/${category.id}`}>{category.name}</Link>
           </p>
         ))}

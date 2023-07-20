@@ -58,7 +58,7 @@ const RightNav = () => {
         <QZone />
       </section>
       <div className="relative ">
-        <img className="rounded-sm" src="/public/bg.png" alt="" />
+        <img className="rounded-sm" src="/bg.png" alt="" />
         <section className="absolute top-0 text-center mx-auto text-white space-y-10 px-5 py-24">
           <h1 className="text-2xl font-bold">Create an Amazing Newspaper</h1>
           <p>

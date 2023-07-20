@@ -8,16 +8,16 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <div className="flex justify-center">
-        <main className="lg:grid flex flex-col grid-cols-3 lg:gap-x-44 ">
-          <div>
+      <div className=" max-w-7xl mx-auto">
+        <main className="lg:grid  grid-cols-4 flex    lg:gap-x-10 ">
+          <div className="col-span-1">
             <LeftNav />
           </div>
 
-          <div>
+          <div className="w-full col-span-2">
             <Outlet />
           </div>
-          <div className="w-full">
+          <div className="col-span-1 flex justify-end">
             <RightNav />
           </div>
         </main>
