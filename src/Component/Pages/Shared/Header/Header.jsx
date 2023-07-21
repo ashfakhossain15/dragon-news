@@ -6,7 +6,7 @@ import HeaderNav from "../Header Nav/HeaderNav";
 const Header = () => {
   return (
     <div>
-      <div className="grid justify-center text-center mt-6 space-y-5">
+      <div className="grid justify-center text-center mt-6 space-y-5 ">
         <img src={Logo} alt="" />
         <h3 className="opacity-50">Journalism Without Fear or Favour</h3>
         <p>{moment().format("dddd MMMM DD YYYY")}</p>
@@ -18,7 +18,7 @@ const Header = () => {
           text.
         </Marquee>
       </div>
-      <div>
+      <div className="">
         <HeaderNav />
       </div>
     </div>

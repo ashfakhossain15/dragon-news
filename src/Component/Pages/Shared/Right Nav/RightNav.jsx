@@ -13,7 +13,7 @@ const RightNav = () => {
       <div>
         <h1 className="font-bold text-xl mb-4">Login With</h1>
         <div className="space-y-3">
-          <button className="flex items-center bg-white border-2 border-sky-400 rounded-md p-1 w-56 justify-center transition-colors duration-1000 hover:bg-gradient-to-r from-blue-500 to-purple-500 ">
+          <button className="flex items-center bg-white border-2 border-sky-400 rounded-md p-1 w-56 justify-center transition-colors duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-500 ">
             <FaGoogle className="mx-2" /> Login with Google
           </button>
           <button className="flex items-center border-2 border-slate-500 rounded-md p-1  w-56 justify-center  ">

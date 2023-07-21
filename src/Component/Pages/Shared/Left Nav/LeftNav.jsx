@@ -19,12 +19,13 @@ const LeftNav = () => {
 
       <div className="divide-y">
         {categories.map((category) => (
-          <p
+          <Link
             key={category.id}
-            className="px-6 py-3 text-lg font-semibold hover:bg-slate-300 rounded-md transition duration-500 "
+            to={`/category/${category.id}`}
+            className="px-6 py-3 text-lg font-semibold hover:bg-slate-300 rounded-md transition duration-500 flex w-full flex-col "
           >
-            <Link to={`/category/${category.id}`}>{category.name}</Link>
-          </p>
+            <button className="text-start">{category.name}</button>
+          </Link>
         ))}
       </div>
     </div>

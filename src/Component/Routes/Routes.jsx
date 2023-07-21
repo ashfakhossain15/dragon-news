@@ -18,7 +18,9 @@ const router = createBrowserRouter([
         path: "/category/:id",
         element: <Category />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5500/categories/${params.id}`),
+          fetch(`http://localhost:5500/categories/${params.id}`).then(
+            (response) => response.json()
+          ),
       },
     ],
   },
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <News />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5500/news/${params.id}`).then((response) =>
+            response.json()
+          ),
       },
     ],
   },

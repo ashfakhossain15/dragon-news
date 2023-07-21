@@ -3,7 +3,7 @@ import unknownImg from "/Unknown_person.jpg";
 import { Link } from "react-router-dom";
 const HeaderNav = () => {
   return (
-    <div className="flex items-center justify-between py-5 px-24">
+    <div className="flex items-center justify-between py-5 px-24 ">
       <span></span>
       <section className="flex justify-center space-x-14">
         <ActiveLink to="/">Home</ActiveLink>

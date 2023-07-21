@@ -10,11 +10,11 @@ const NewsLayout = () => {
         <div>
           <Header />
           <div className="flex justify-center">
-            <main className="lg:grid flex gap-x-10 px-14 flex-col grid-cols-4  lg:gap-x-44 ">
+            <main className="lg:grid flex gap-x-10 px-14 flex-col grid-cols-4  lg:gap-x-24 ">
               <div className="col-span-3">
                 <Outlet />
               </div>
-              <div className="w-full grid-cols-1 cols-1">
+              <div className="w-full col-span-1 ">
                 <RightNav />
               </div>
             </main>
