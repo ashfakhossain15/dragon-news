@@ -3,11 +3,11 @@ import NewsCard from "./NewsCard";
 
 const Category = () => {
   const { id } = useParams();
-  const categoryNew = useLoaderData();
-  console.log(categoryNew);
+  const categoryNews = useLoaderData();
+
   return (
     <div>
-      {categoryNew.map((news) => (
+      {categoryNews.map((news) => (
         <NewsCard key={news._id} news={news}></NewsCard>
       ))}
     </div>

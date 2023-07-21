@@ -1,5 +1,6 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import EditorsInsight from "./EditorsInsight";
 
 const News = () => {
   const News = useLoaderData();
@@ -25,6 +26,7 @@ const News = () => {
           </div>
         </div>
       </div>
+      <section><EditorsInsight/></section>
     </div>
   );
 };
