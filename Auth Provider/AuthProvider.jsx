@@ -1,18 +1,24 @@
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import { GithubAuthProvider } from "firebase/auth";
+
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const githubProvider = new GithubAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -24,11 +30,11 @@ const AuthProvider = ({ children }) => {
     signInWithEmailAndPassword(auth, email, password);
   };
   useEffect(() => {
-    const unSuscribred = onAuthStateChanged(auth, (currentUser) => {
+    const unSubscribed = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
       return () => {
-        return unSuscribred();
+        return unSubscribed();
       };
     });
   }, []);
