@@ -22,12 +22,12 @@ const AuthProvider = ({ children }) => {
 
   const createUser = (email, password) => {
     setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const login = (email, password) => {
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   };
   useEffect(() => {
     const unSubscribed = onAuthStateChanged(auth, (currentUser) => {
@@ -39,8 +39,8 @@ const AuthProvider = ({ children }) => {
     });
   }, []);
 
-  const logOut = (email, password) => {
-    signOut(auth);
+  const logOut = () => {
+    return signOut(auth);
   };
 
   const authInfo = {

@@ -4,7 +4,14 @@ import unknownImg from "/Unknown_person.jpg";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../../../Auth Provider/AuthProvider";
 const HeaderNav = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logout()
+      .then(() => {})
+      .catch(() => {});
+  };
+
   return (
     <div className="flex items-center justify-between py-5 px-24 ">
       <span></span>
@@ -18,13 +25,18 @@ const HeaderNav = () => {
         <img src={unknownImg} alt="" className="w-8 rounded-full" />
         <div className="flex items-center">
           {user ? (
-            <button className="bg-black rounded-sm py-1 px-6  text-white">
-              <Link>Logout</Link>
+            <button
+              onClick={() => handleLogOut}
+              className="bg-black rounded-sm py-1 px-6  text-white"
+            >
+              Logout
             </button>
-          ) : (<Link to="/login">
-            <button className="bg-black rounded-sm py-1 px-6  text-white">
-              Login
-            </button></Link>
+          ) : (
+            <Link to="/login">
+              <button className="bg-black rounded-sm py-1 px-6  text-white">
+                Login
+              </button>
+            </Link>
           )}
         </div>
       </section>
