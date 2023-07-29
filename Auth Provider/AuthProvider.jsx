@@ -15,7 +15,7 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const githubProvider = new GithubAuthProvider();
   const googleProvider = new GoogleAuthProvider();
@@ -33,10 +33,10 @@ const AuthProvider = ({ children }) => {
     const unSubscribed = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      return () => {
-        return unSubscribed();
-      };
     });
+    return () => {
+      unSubscribed();
+    };
   }, []);
 
   const logOut = () => {

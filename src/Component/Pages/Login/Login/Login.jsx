@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../../Auth Provider/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -24,6 +24,10 @@ const Login = () => {
   const handleShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location?.state?.from?.pathname);
+  const from = location?.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +37,7 @@ const Login = () => {
       .then((result) => {
         const logedUser = result.user;
         toast.success("User Login successfully");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
