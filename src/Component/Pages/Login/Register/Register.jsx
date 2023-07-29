@@ -31,10 +31,10 @@ const RegisterPage = () => {
     setError("");
     setSuccess("");
 
-    if (image == "") {
-      return toast.error("Enter your Image");
-    } else if (name == "") {
+    if (name == "") {
       return toast.error("Enter your Name");
+    } else if (image == "") {
+      return toast.error("Enter your  Image");
     } else if (email == "") {
       return toast.error("Enter your email address");
     } else if (password == "") {
